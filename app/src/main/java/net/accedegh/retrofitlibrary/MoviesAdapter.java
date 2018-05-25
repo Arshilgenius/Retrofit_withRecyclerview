@@ -41,7 +41,10 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
     @Override
     public void onBindViewHolder(MoviesAdapter.ViewHolder viewHolder, int i) {
         viewHolder.title.setText(movies.get(i).getName());
-        viewHolder.actors.setText(movies.get(i).getDescription());
+        viewHolder.desc.setText(movies.get(i).getDescription());
+//        viewHolder.desc2.setText(movies.get(i).getCloneUrl());
+//        viewHolder.desc3.setText(movies.get(i).getHomepage());
+//        viewHolder.desc4.setText(movies.get(i).getBlobsUrl());
 
         // This is how we use Picasso to load images from the internet.
 //       Picasso.with(context)
@@ -62,15 +65,17 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
 
 
     public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView title, year, actors;
+        private TextView title, desc, desc2, desc3, desc4 ;
         private ImageView imageView;
 
         public ViewHolder(View view) {
             super(view);
             title = (TextView) view.findViewById(R.id.title);
-            year = (TextView) view.findViewById(R.id.year);
-            actors = (TextView) view.findViewById(R.id.actors);
-            imageView= (ImageView) view.findViewById(R.id.cover);
+            desc = (TextView) view.findViewById(R.id.description);
+//            desc2 = (TextView) view.findViewById(R.id.description2);
+//            desc3=  (TextView) view.findViewById(R.id.description3);
+//            desc4 = (TextView) view.findViewById(R.id.description4);
+
 
             itemView.setOnClickListener(new View.OnClickListener(){
                 @Override
